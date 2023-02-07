@@ -18,9 +18,14 @@ public class PlayerScore : MonoBehaviour {
 
 	//       scoreText.text = "Score: ";
 	//}
+
+	[SerializeField]
+	private AudioSource audioSource;
+
 	private ScoreManager theScoreManager;
     private void Start()
     {
+		SoundManager.Instance.Play(audioSource);
         theScoreManager= FindObjectOfType<ScoreManager>();	
     }
     void OnTriggerEnter2D(Collider2D target){

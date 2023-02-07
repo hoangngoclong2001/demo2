@@ -7,6 +7,9 @@ public class FruitSpawner : MonoBehaviour {
 	[SerializeField]
 	private GameObject[] fruits;
 
+	[SerializeField]
+	private AudioSource audioSource;
+
 	private BoxCollider2D col;
 	float x1,x2;
 	// Use this for initialization
@@ -18,6 +21,7 @@ public class FruitSpawner : MonoBehaviour {
 	}
 
 	void Start(){
+		SoundManager.Instance.PlayMusic(audioSource);
 		StartCoroutine (SpawnFruit (1f));
 	}
 	// Update is called once per frame
