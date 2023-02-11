@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScore : MonoBehaviour {
 
+
+	private static List<string> tags = new List<string>{ "Fruit","FruitOne","FruitTwo","FruitThree","FruitFour" };
+
 	//private Text scoreText;
 
 
@@ -36,7 +39,7 @@ public class PlayerScore : MonoBehaviour {
       
         }
 
-		if (target.tag == "Fruit") {
+		if (tags.Contains(target.tag)) {
 			target.gameObject.SetActive (false);
 			theScoreManager.scoreCount = this.theScoreManager.scoreCount + 1;
         
